@@ -1,0 +1,846 @@
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            rgba(150, 30, 40, 0.28),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 50% 85%,
+            rgba(212, 175, 55, 0.08),
+            transparent 35%
+        ),
+        #4b0c13;
+
+    color: #fff4dc;
+
+    font-family:
+        "Noto Serif Devanagari",
+        serif;
+}
+
+
+/* ==================================================
+   BACKGROUND
+================================================== */
+
+.background-glow {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(255, 196, 80, 0.07),
+            transparent 28%
+        );
+
+    z-index: -2;
+}
+
+.gold-particles {
+    position: fixed;
+    inset: 0;
+
+    overflow: hidden;
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+.gold-particle {
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: #e6c76a;
+
+    opacity: 0.45;
+
+    animation: particleFloat 7s linear forwards;
+}
+
+@keyframes particleFloat {
+
+    from {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.5;
+    }
+
+    80% {
+        opacity: 0.35;
+    }
+
+    to {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+}
+
+
+/* ==================================================
+   MAIN
+================================================== */
+
+.invitation {
+    width: 100%;
+    max-width: 650px;
+
+    margin: 0 auto;
+}
+
+
+/* ==================================================
+   OPENING
+================================================== */
+
+.opening {
+
+    min-height: 100svh;
+
+    padding:
+        30px
+        20px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.om {
+    font-family: "Gotu", serif;
+
+    font-size: 42px;
+
+    color: #e4c568;
+
+    margin-bottom: 8px;
+
+    text-shadow:
+        0 0 15px rgba(228, 197, 104, 0.25);
+}
+
+.mantra {
+
+    font-size: 16px;
+
+    color: #e4c568;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 18px;
+}
+
+.opening-small {
+
+    font-size: 15px;
+
+    color: rgba(255, 244, 220, 0.75);
+
+    margin-bottom: 3px;
+}
+
+.opening h1 {
+
+    font-size:
+        clamp(30px, 8vw, 46px);
+
+    font-weight: 500;
+
+    line-height: 1.3;
+
+    color: #fff1ce;
+
+    text-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.35);
+}
+
+.scroll-hint {
+
+    margin-top: 38px;
+
+    font-size: 12px;
+
+    color:
+        rgba(255, 244, 220, 0.55);
+
+    letter-spacing: 2px;
+
+    animation:
+        scrollPulse 2s infinite;
+}
+
+@keyframes scrollPulse {
+
+    50% {
+        opacity: 0.35;
+        transform: translateY(5px);
+    }
+}
+
+
+/* ==================================================
+   ALL SECTIONS
+================================================== */
+
+section {
+
+    padding:
+        30px
+        20px;
+
+    opacity: 0;
+
+    transform:
+        translateY(18px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+section.visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* ==================================================
+   MAHALAXMI
+================================================== */
+
+.deity-section {
+
+    padding-top: 12px;
+    padding-bottom: 24px;
+
+    text-align: center;
+}
+
+.deity-frame {
+
+    width: min(86%, 360px);
+
+    margin: 0 auto;
+
+    padding: 6px;
+
+    border:
+        1px solid
+        rgba(226, 193, 99, 0.75);
+
+    background:
+        rgba(255, 220, 130, 0.04);
+
+    box-shadow:
+        0 0 30px rgba(0, 0, 0, 0.28);
+}
+
+.deity-frame img {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ==================================================
+   DIVIDER
+================================================== */
+
+.gold-divider {
+
+    width: 75px;
+    height: 1px;
+
+    margin:
+        12px auto;
+
+    background: #d8b85d;
+
+    opacity: 0.8;
+}
+
+
+/* ==================================================
+   INVITATION
+================================================== */
+
+.invitation-section {
+
+    text-align: center;
+
+    padding-top: 18px;
+    padding-bottom: 22px;
+}
+
+.invitation-label {
+
+    font-size: 13px;
+
+    color: #dfbf65;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 5px;
+}
+
+.invitation-section h2 {
+
+    font-size:
+        clamp(27px, 7vw, 37px);
+
+    font-weight: 500;
+
+    line-height: 1.3;
+
+    color: #ffe8b2;
+}
+
+.invitation-text {
+
+    max-width: 560px;
+
+    margin:
+        10px auto 0;
+
+    font-size: 14.5px;
+
+    line-height: 1.85;
+
+    color:
+        rgba(255, 244, 220, 0.88);
+}
+
+
+/* ==================================================
+   DATE
+================================================== */
+
+.date-section {
+
+    text-align: center;
+
+    padding-top: 18px;
+    padding-bottom: 20px;
+}
+
+.date-label {
+
+    font-size: 13px;
+
+    color: #dabb63;
+
+    margin-bottom: 6px;
+}
+
+.date-circle {
+
+    width: 125px;
+    height: 125px;
+
+    margin:
+        0 auto 10px;
+
+    border:
+        1px solid #d9ba62;
+
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 210, 100, 0.08),
+            transparent 70%
+        );
+
+    box-shadow:
+        0 0 25px
+        rgba(218, 183, 91, 0.08);
+}
+
+.date-circle .day {
+
+    font-size: 43px;
+
+    line-height: 1;
+
+    color: #ffe5a2;
+}
+
+.date-circle .month {
+
+    font-size: 14px;
+
+    color: #dabb63;
+
+    margin-top: 4px;
+}
+
+.date-time {
+
+    font-size: 13px;
+
+    color:
+        rgba(255, 244, 220, 0.7);
+}
+
+
+/* ==================================================
+   VENUE
+================================================== */
+
+.venue-section {
+
+    text-align: center;
+
+    padding-top: 18px;
+    padding-bottom: 22px;
+}
+
+.venue-label {
+
+    font-size: 13px;
+
+    color: #dabb63;
+
+    margin-bottom: 4px;
+}
+
+.venue-section h3 {
+
+    font-size: 22px;
+
+    font-weight: 500;
+
+    color: #ffe5aa;
+
+    margin-bottom: 5px;
+}
+
+.address {
+
+    font-size: 13.5px;
+
+    line-height: 1.7;
+
+    color:
+        rgba(255, 244, 220, 0.75);
+}
+
+
+/* ==================================================
+   LOCATION / QR
+================================================== */
+
+.location-section {
+
+    text-align: center;
+
+    padding-top: 18px;
+    padding-bottom: 28px;
+}
+
+.location-title {
+
+    font-size: 13px;
+
+    color: #dabb63;
+
+    margin-bottom: 2px;
+}
+
+.location-subtitle {
+
+    font-size: 20px;
+
+    color: #ffe5aa;
+
+    margin-bottom: 10px;
+}
+
+.location-card {
+
+    width: min(100%, 310px);
+
+    margin: 0 auto;
+
+    padding:
+        13px
+        13px
+        11px;
+
+    border:
+        1px solid
+        rgba(218, 185, 96, 0.7);
+
+    background:
+        rgba(0, 0, 0, 0.08);
+}
+
+.qr-frame {
+
+    position: relative;
+
+    width: fit-content;
+
+    margin: 0 auto;
+
+    padding: 8px;
+
+    background: #fff;
+
+    border:
+        2px solid #d8b85d;
+}
+
+.location-qr {
+
+    display: block;
+
+    width: 180px;
+    height: 180px;
+
+    object-fit: contain;
+}
+
+.qr-corner {
+
+    position: absolute;
+
+    font-size: 13px;
+
+    color: #b9912f;
+}
+
+.qr-corner.top-left {
+    top: -8px;
+    left: -8px;
+}
+
+.qr-corner.top-right {
+    top: -8px;
+    right: -8px;
+}
+
+.qr-corner.bottom-left {
+    bottom: -8px;
+    left: -8px;
+}
+
+.qr-corner.bottom-right {
+    bottom: -8px;
+    right: -8px;
+}
+
+.qr-instruction {
+
+    margin-top: 8px;
+
+    font-size: 11.5px;
+
+    line-height: 1.5;
+
+    color:
+        rgba(255, 244, 220, 0.65);
+}
+
+.location-section > .address {
+
+    margin-top: 9px;
+
+    font-size: 15px;
+}
+
+
+/* ==================================================
+   FINAL
+================================================== */
+
+.final-section {
+
+    text-align: center;
+
+    padding-top: 0px;
+    padding-bottom: 32px;
+}
+
+.final-message {
+
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    font-size: 14px;
+
+    line-height: 6;
+
+    color:
+        rgba(255, 244, 220, 0.85);
+}
+
+
+/* ==================================================
+   DIYA
+================================================== */
+
+.diya-button {
+
+    border: none;
+
+    background: transparent;
+
+    margin-top: 18px;
+
+    cursor: pointer;
+
+    color: #ffe5a0;
+}
+
+.diya {
+
+    position: relative;
+
+    width: 62px;
+    height: 30px;
+
+    margin: 0 auto;
+
+    background: #c58d32;
+
+    border-radius:
+        0 0 35px 35px;
+
+    box-shadow:
+        0 6px 12px
+        rgba(0, 0, 0, 0.25);
+}
+
+.flame {
+
+    position: absolute;
+
+    left: 50%;
+    top: -30px;
+
+    width: 18px;
+    height: 28px;
+
+    transform:
+        translateX(-50%);
+
+    background: #ffd86b;
+
+    border-radius:
+        60% 40% 60% 40%;
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(255, 196, 65, 0.8)
+        );
+
+    animation:
+        flameMove 1.5s
+        infinite
+        ease-in-out;
+}
+
+@keyframes flameMove {
+
+    50% {
+        transform:
+            translateX(-50%)
+            scale(0.88, 1.08);
+    }
+}
+
+.diya-text {
+
+    display: block;
+
+    margin-top: 9px;
+
+    font-size: 12px;
+
+    color:
+        rgba(255, 244, 220, 0.65);
+}
+
+.diya-activated .flame {
+
+    animation-duration: 0.8s;
+
+    filter:
+        drop-shadow(
+            0 0 15px
+            rgba(255, 205, 80, 0.95)
+        );
+}
+
+.family-name {
+
+    margin-top: 20px;
+
+    font-size: 24px;
+
+    color: #e5c46a;
+
+    letter-spacing: 1px;
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+
+    text-align: center;
+
+    padding:
+        20px
+        20px
+        25px;
+
+    font-size: 12px;
+
+    color:
+        rgba(255, 220, 140, 0.55);
+
+    border-top:
+        1px solid
+        rgba(218, 185, 96, 0.12);
+}
+
+
+/* ==================================================
+   MUSIC
+================================================== */
+
+.music-button {
+
+    position: fixed;
+
+    right: 15px;
+    bottom: 15px;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(225, 194, 104, 0.7);
+
+    background:
+        rgba(55, 5, 12, 0.82);
+
+    color: #e6c76a;
+
+    backdrop-filter: blur(8px);
+
+    cursor: pointer;
+
+    z-index: 20;
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 480px) {
+
+    .opening {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    section {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .deity-frame {
+        width: min(88%, 330px);
+    }
+
+    .invitation-text {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .location-qr {
+        width: 175px;
+        height: 175px;
+    }
+
+    .family-name {
+        font-size: 23px;
+    }
+}
+
+
+/* ==================================================
+   REDUCED MOTION
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        transition-duration:
+            0.01ms !important;
+    }
+}
